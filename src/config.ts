@@ -20,7 +20,7 @@ export const CONTATO = {
   whatsappMensagemPadrao:
     "Olá! Vim pela landing page e gostaria de solicitar o Diagnóstico Vértice.",
 
-  email: "contate.ilambiental@gmail.com",
+  email: "contato@ilambiental.com.br",
 
   instagramArroba: "@ilambiental",
   instagramUrl: "https://www.instagram.com/ilambiental/",
