@@ -1,0 +1,24 @@
+{
+  "name": "il-engenharia-landing-page",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Landing page da IL Engenharia e Consultoria Ambiental, para campanhas de anúncios (Instagram/Meta Ads).",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.0.4",
+    "typescript": "~5.9.2",
+    "vite": "^7.3.0"
+  }
+}
