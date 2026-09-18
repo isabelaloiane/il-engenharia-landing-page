@@ -4,7 +4,10 @@ Landing page independente para campanhas de anúncios (Instagram / Meta Ads),
 recuperada do projeto original do Replit ("il-engenharia-lp") e adaptada para
 rodar fora do Replit, de forma 100% gratuita, no seu próprio subdomínio.
 
-Site publicado (depois de configurado o DNS): **https://lp.ilambiental.com.br**
+Site publicado (endereço temporário, já no ar agora): **https://isabelaloiane.github.io/il-engenharia-landing-page/**
+Site publicado (endereço final, assim que o DNS abaixo for configurado): **https://lp.ilambiental.com.br**
+
+Repositório no GitHub: **https://github.com/isabelaloiane/il-engenharia-landing-page**
 
 ---
 
@@ -18,7 +21,7 @@ export const CONTATO = {
   whatsappNumero: "5591992723570",
   whatsappExibicao: "(91) 99272-3570",
   whatsappMensagemPadrao: "Olá! Vim pela landing page e gostaria de solicitar o Diagnóstico Vértice.",
-  email: "contate.ilambiental@gmail.com",
+  email: "contato@ilambiental.com.br",
   instagramArroba: "@ilambiental",
   ...
 };
@@ -79,20 +82,25 @@ usar esse endereço, assim que o DNS for apontado (ver seção seguinte).
 
 ## O que falta fazer (só você consegue fazer isso)
 
+O GitHub Pages já está ativado e a página já está no ar no endereço
+temporário acima. Falta apenas um passo, que só você pode fazer porque
+exige acesso ao painel do seu domínio:
+
 1. **Criar o registro de DNS do subdomínio.** No painel onde o domínio
-   `ilambiental.com.br` está registrado, adicione um registro:
+   `ilambiental.com.br` está registrado (registro.br ou outro provedor),
+   adicione um registro:
    - Tipo: `CNAME`
    - Nome/Host: `lp`
    - Valor/Aponta para: `isabelaloiane.github.io`
-   (o nome exato do destino é confirmado assim que o repositório for criado
-   no GitHub — está tudo pronto para receber essa informação).
 
-2. **Ativar o GitHub Pages** nas configurações do repositório
-   (Settings → Pages → Source: "GitHub Actions") — um clique, feito uma
-   única vez.
+2. Depois de adicionar o registro DNS, vá em
+   `Settings → Pages` no repositório e digite `lp.ilambiental.com.br` no
+   campo "Custom domain" (se ainda não aparecer preenchido) e clique em
+   "Save". O GitHub confirma o domínio automaticamente.
 
-3. Aguardar alguns minutos para o certificado HTTPS ser emitido
-   automaticamente pelo GitHub (gratuito, renovação automática).
+3. Aguardar a propagação do DNS (de alguns minutos a algumas horas) e o
+   certificado HTTPS ser emitido automaticamente pelo GitHub (gratuito,
+   renovação automática, sem nenhuma ação sua).
 
 Depois disso, qualquer atualização futura é só `git push` — nada mais
 precisa ser reconfigurado.
@@ -123,11 +131,9 @@ precisa ser reconfigurado.
   Isabela. Há fotos disponíveis em
   `CLAUDE - DESIGN/05_FOTOS_CEO`, mas a escolha de qual foto usar é uma
   decisão de imagem pessoal — nenhuma foi inserida automaticamente.
-- O site institucional usa dois e-mails em lugares diferentes:
-  `contate.ilambiental@gmail.com` (rodapé, usado em todo o site) e
-  `contato@ilambiental.com.br` (cartão de contato da página /contato).
-  A landing page manteve o primeiro (é o mais usado no site atual); avise
-  se preferir usar o e-mail do domínio próprio.
+- ~~E-mail de contato~~ — já resolvido: a landing page usa
+  `contato@ilambiental.com.br` (e-mail do domínio próprio), conforme
+  combinado.
 - Não há formulário de contato nesta landing page — apenas WhatsApp e
   e-mail direto. Isso é intencional (reduz fricção para tráfego pago), mas
   se quiser um formulário, é possível adicionar.
