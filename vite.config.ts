@@ -2,10 +2,11 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 // Configuração enxuta e independente do Replit.
-// "base: /" porque a landing page vai morar na RAIZ do subdomínio
-// (ex: https://lp.ilambiental.com.br/), e não em uma subpasta.
+// "base: ./" (caminho relativo) para o build funcionar tanto no
+// endereço temporário do GitHub Pages (isabelaloiane.github.io/il-engenharia-landing-page/)
+// quanto no domínio final (https://lp.ilambiental.com.br/) sem precisar mudar nada.
 export default defineConfig({
-  base: "/",
+  base: "./",
   plugins: [react()],
   build: {
     outDir: "dist",
