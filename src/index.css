@@ -1301,6 +1301,21 @@ footer {
   .sentinela-transformacao { grid-column: 1; }
   #sentinela::before { display: none; }
   .prova-social-stats { grid-template-columns: 1fr 1fr; }
+
+  /* Padding reductions inside components */
+  .problema-item { padding: 36px 28px; }
+  .problema-alerta { padding: 40px 28px; gap: 20px; }
+  .alerta-numero { font-size: 56px; }
+  .alerta-texto { font-size: 18px; }
+  .solucao-perfil { padding: 36px 28px; }
+  .sentinela-beneficios { padding: 32px 24px; }
+  .sentinela-transformacao { padding: 40px 28px; }
+  .diferencial-card { padding: 40px 28px; }
+  .vertice-visual { padding: 48px 28px; }
+  .vertice-numero { font-size: 60px; }
+  .processo-nota { padding: 40px 32px; }
+  .produto-conceito { font-size: 18px; }
+  .hero-subtitulo { max-width: 100%; }
 }
 
 @media (max-width: 600px) {
@@ -1308,6 +1323,79 @@ footer {
   .processo-steps { grid-template-columns: 1fr; }
   .nav-cta { display: none; }
   .prova-social-stats { grid-template-columns: 1fr; }
+
+  /* Container menor para celulares */
+  .container { padding: 0 20px; }
+
+  /* Secoes: reduzir padding vertical */
+  #problema, #solucao, #sentinela, #diferencial, #como-funciona { padding: 72px 0; }
+  #vertice { padding: 72px 0; }
+  #cta-final { padding: 80px 0; }
+  #hero { padding: 110px 0 64px; }
+
+  /* Nav menor */
+  nav { padding: 14px 0; }
+
+  /* Hero */
+  .hero-titulo { font-size: clamp(30px, 8vw, 50px); }
+  .hero-subtitulo { font-size: 15px; }
+  .hero-ctas { flex-direction: column; gap: 12px; }
+  .hero-ctas .btn-primario,
+  .hero-ctas .btn-secundario { width: 100%; text-align: center; }
+
+  /* Problema */
+  .problema-item { padding: 28px 20px; }
+  .problema-alerta { padding: 28px 20px; }
+  .alerta-numero { font-size: 44px; }
+  .alerta-texto { font-size: 16px; }
+
+  /* Solucao */
+  .solucao-perfil { padding: 28px 20px; }
+
+  /* Sentinela */
+  .sentinela-beneficios { padding: 24px 16px; }
+  .sentinela-transformacao { padding: 28px 16px; }
+  .transformacao-texto { font-size: 14px; }
+  .bloco-texto { padding-left: 18px; }
+  .produto-conceito { font-size: 16px; }
+  .produto-subtipo { font-size: 12px; letter-spacing: 1px; }
+
+  /* Vertice */
+  .vertice-visual { padding: 40px 20px; }
+  .vertice-numero { font-size: clamp(24px, 11vw, 48px); }
+  .vertice-quando { padding: 20px; }
+  .vertice-prazo { flex-wrap: wrap; }
+
+  /* Diferencial */
+  .diferencial-card { padding: 32px 20px; }
+  .diferencial-comparativo { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+  /* Como funciona */
+  .processo-nota { padding: 32px 20px; }
+  .nota-texto { font-size: 16px; }
+
+  /* CTA */
+  .btn-grande { font-size: 14px; padding: 18px 20px; width: 100%; text-align: center; }
+  .cta-titulo { font-size: clamp(26px, 7vw, 48px); }
+
+  /* Prova social */
+  .prova-social-stats > div { padding: 28px 20px; }
+
+  /* Footer */
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+
+/* Breakpoint extra: telas muito pequenas (≤420px) */
+@media (max-width: 420px) {
+  .container { padding: 0 16px; }
+  .hero-titulo { font-size: clamp(26px, 9vw, 40px); }
+  .produto-nome { font-size: clamp(28px, 10vw, 48px); }
+  .alerta-numero { font-size: 38px; }
+  .vertice-numero { font-size: clamp(20px, 9.5vw, 36px); }
+  .sentinela-beneficios { padding: 20px 12px; }
+  .diferencial-card { padding: 28px 16px; }
+  .btn-grande { padding: 16px 16px; font-size: 13px; }
+  .cta-titulo { font-size: clamp(24px, 7.5vw, 36px); }
 }
 
 /* ===== BOTÃO FLUTUANTE DE WHATSAPP (fica sempre visível ao rolar a página) ===== */
