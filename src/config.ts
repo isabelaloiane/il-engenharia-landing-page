@@ -1,5 +1,5 @@
 // ============================================================================
-// CONFIGURAÇÕES DA LANDING PAGE — IL Engenharia e Consultoria Ambiental
+// CONFIGURAÇÕES DA LANDING PAGE — IL Ambiental
 // ============================================================================
 // Este é o ÚNICO lugar que você precisa editar para atualizar WhatsApp,
 // e-mail, Instagram, LinkedIn ou a mensagem padrão do botão de WhatsApp.
@@ -18,7 +18,11 @@ export const CONTATO = {
   // Mensagem que já vem pré-escrita quando a pessoa clica em qualquer
   // botão de WhatsApp da página.
   whatsappMensagemPadrao:
-    "Olá! Vim pela landing page e gostaria de solicitar o Diagnóstico Vértice.",
+    "Olá, Isabela! Vim pela página do Diagnóstico Vértice e gostaria de solicitar o diagnóstico para a minha empresa. [LP]",
+
+  // Mensagem específica para quem quer conversar sobre o Sentinela.
+  whatsappMensagemSentinela:
+    "Olá, Isabela! Vim pela página do Diagnóstico Vértice e gostaria de conhecer o Programa Sentinela. [LP]",
 
   email: "contato@ilambiental.com.br",
 
@@ -32,6 +36,11 @@ export const CONTATO = {
 // Gera o link pronto do WhatsApp (com a mensagem já preenchida).
 export function linkWhatsApp(mensagem: string = CONTATO.whatsappMensagemPadrao): string {
   return `https://wa.me/${CONTATO.whatsappNumero}?text=${encodeURIComponent(mensagem)}`;
+}
+
+// Link para quem quer conversar sobre o Sentinela.
+export function linkWhatsAppSentinela(): string {
+  return linkWhatsApp(CONTATO.whatsappMensagemSentinela);
 }
 
 // Gera o link pronto de e-mail (com assunto opcional já preenchido).
