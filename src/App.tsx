@@ -142,7 +142,7 @@ function Hero() {
 
           <div className="hero-foto-wrapper">
             <img
-              src="/isabela-loiane.webp"
+              src="/isabela-hero.webp"
               alt="Isabela Loiane, Engenheira Florestal, sentada em ambiente profissional"
               className="hero-foto"
               width="480"
