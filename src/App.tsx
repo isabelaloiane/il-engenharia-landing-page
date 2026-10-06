@@ -224,10 +224,10 @@ function Hero() {
               alt="Isabela Loiane, Engenheira Florestal, sentada em ambiente profissional"
               className="hero-foto"
               width="480"
-              height="640"
+              height="600"
               loading="eager"
             />
-            <p className="hero-foto-legenda">Isabela Loiane · Coordenação técnica · CREA-PA 1521301735</p>
+            <p className="hero-foto-legenda">Isabela Loiane · Coordenação técnica</p>
           </div>
         </div>
       </div>
@@ -239,7 +239,7 @@ function Hero() {
 
 function AutoridadeFaixa() {
   const itens = [
-    { icone: <IconCheck color="#734120" />, texto: "Análise feita pela responsável técnica, CREA-PA 1521301735" },
+    { icone: <IconCheck color="#734120" />, texto: "Análise feita pela responsável técnica da IL Ambiental" },
     { icone: <IconDoc color="#734120" />, texto: "Engenharia Florestal (UEPA) e pós-graduação em Direito Ambiental (CESUPA)" },
     { icone: <IconDoc color="#734120" />, texto: "Documento com as obrigações dos próximos 12 meses" },
     { icone: <IconCheck color="#734120" />, texto: "Sem compromisso de contratação" },

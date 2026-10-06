@@ -1698,3 +1698,21 @@ margin-top: 14px;
 @media (max-width: 600px) {
   .autoridade-posicionamento { font-size: 13px; margin-top: 16px; }
 }
+
+/* Método: grade responsiva (precisa vir depois da regra base de .metodo-grid) */
+@media (max-width: 900px) {
+  .metodo-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .metodo-grid { grid-template-columns: 1fr; }
+}
+
+/* Comparativo no celular: rótulo pequeno acima de cada valor */
+.tabela-cartao-linha { flex-direction: column; gap: 2px; }
+.tabela-cartao-rotulo {
+width: auto;
+font-size: 11px;
+text-transform: uppercase;
+letter-spacing: 0.06em;
+}
+.tabela-cartao-valor { text-align: left; }
