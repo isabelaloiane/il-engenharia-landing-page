@@ -205,7 +205,7 @@ function Hero() {
                   <IconWhatsApp />
                   Solicitar o diagnóstico pelo WhatsApp
                 </a>
-                <p className="btn-microtexto">Você fala com a IL Ambiental. Retorno em até 1 dia útil.</p>
+                <p className="btn-microtexto">Nossa equipe técnica retorna em até 1 dia útil.</p>
               </div>
               <a href="#cta-final" className="btn-link">Prefiro preencher um formulário</a>
             </div>
@@ -227,7 +227,7 @@ function Hero() {
               height="640"
               loading="eager"
             />
-            <p className="hero-foto-legenda">Isabela Loiane, Engenheira Florestal · CREA-PA 1521301735</p>
+            <p className="hero-foto-legenda">Isabela Loiane · Coordenação técnica · CREA-PA 1521301735</p>
           </div>
         </div>
       </div>
@@ -240,9 +240,9 @@ function Hero() {
 function AutoridadeFaixa() {
   const itens = [
     { icone: <IconCheck color="#734120" />, texto: "Análise feita pela responsável técnica, CREA-PA 1521301735" },
-    { icone: <IconDoc color="#734120" />, texto: "Engenharia Florestal e especialização em Direito Agroambiental" },
+    { icone: <IconDoc color="#734120" />, texto: "Engenharia Florestal (UEPA) e pós-graduação em Direito Ambiental (CESUPA)" },
     { icone: <IconDoc color="#734120" />, texto: "Documento com as obrigações dos próximos 12 meses" },
-    { icone: <IconCheck color="#734120" />, texto: "Sem custo e sem compromisso de contratação" },
+    { icone: <IconCheck color="#734120" />, texto: "Sem compromisso de contratação" },
   ];
 
   return (
@@ -256,6 +256,9 @@ function AutoridadeFaixa() {
             </div>
           ))}
         </div>
+        <p className="autoridade-posicionamento">
+          A IL Ambiental atua na gestão ambiental contínua de empresas. O Diagnóstico Vértice é o primeiro passo desse trabalho.
+        </p>
       </div>
     </div>
   );
@@ -306,21 +309,6 @@ function ParaQuem() {
         <p className="para-quem-criterio">
           O Diagnóstico Vértice é voltado a empresas em funcionamento ou em implantação na Região Metropolitana de Belém e entorno.
         </p>
-        <div style={{ textAlign: "center", marginTop: "40px" }}>
-          <div>
-            <a
-              href={whatsappHref()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primario btn-icon"
-              onClick={() => trackWA("meio")}
-            >
-              <IconWhatsApp />
-              Solicitar o diagnóstico pelo WhatsApp
-            </a>
-            <p className="btn-microtexto btn-microtexto--centro">Você fala com a IL Ambiental. Retorno em até 1 dia útil.</p>
-          </div>
-        </div>
       </div>
     </section>
   );
@@ -393,7 +381,6 @@ function OQueRecebe() {
               <IconWhatsApp />
               Solicitar o diagnóstico pelo WhatsApp
             </a>
-            <p className="btn-microtexto btn-microtexto--centro">Você fala com a IL Ambiental. Retorno em até 1 dia útil.</p>
           </div>
         </div>
       </div>
@@ -503,7 +490,7 @@ function DepoisDiagnostico() {
     {
       num: "01",
       titulo: "Executar por conta própria",
-      texto: "Use o diagnóstico com a sua equipe ou com outro profissional. Sem nenhum compromisso com a IL.",
+      texto: "Use o diagnóstico com a sua equipe ou com outro profissional. Sem compromisso de contratação.",
       destaque: false,
     },
     {
@@ -516,7 +503,7 @@ function DepoisDiagnostico() {
       num: "03",
       titulo: "Programa Sentinela",
       subtitulo: "contrato anual · serviço pago",
-      texto: "A IL Ambiental acompanha as obrigações ambientais da empresa durante 12 meses. Serviço pago, sob proposta.",
+      texto: "A IL Ambiental assume a gestão das demandas ambientais da empresa por 12 meses: licenças, condicionantes, relatórios, processos e autos de infração, conforme o escopo definido. Contrato anual, sob proposta.",
       destaque: true,
     },
   ];
@@ -529,6 +516,10 @@ function DepoisDiagnostico() {
     "Acompanhamento documental.",
     "Orientação ao empreendimento sempre que surgir uma dúvida ou demanda.",
     "Relatório de acompanhamento periódico.",
+    "Licenciamento e renovação de licenças.",
+    "Solicitações e processos junto aos órgãos.",
+    "Resposta a autos de infração e notificações.",
+    "Serviços técnicos específicos, conforme o escopo.",
   ];
 
   const tabelaLinhas = [
@@ -577,6 +568,7 @@ function DepoisDiagnostico() {
                 </li>
               ))}
             </ul>
+            <p className="sentinela-escopo">O escopo de cada contrato é definido a partir do Diagnóstico Vértice.</p>
           </div>
           <button
             className="sentinela-ver-mais"
@@ -645,7 +637,6 @@ function DepoisDiagnostico() {
               <IconWhatsApp />
               Começar pelo Diagnóstico Vértice
             </a>
-            <p className="btn-microtexto btn-microtexto--centro">Você fala com a IL Ambiental. Retorno em até 1 dia útil.</p>
           </div>
           {/* LC-05: botão com contraste corrigido */}
           <a
@@ -668,7 +659,7 @@ function DepoisDiagnostico() {
 function QuemConduz() {
   const selos = [
     "Engenharia Florestal",
-    "Direito Agroambiental",
+    "Direito Ambiental (CESUPA)",
     "CREA-PA 1521301735",
     "Cerca de 50 processos protocolados",
   ];
@@ -691,7 +682,7 @@ function QuemConduz() {
             <div className="tag-label tag-label--bege">Coordenação técnica</div>
             <h2 className="titulo-secao">Isabela Loiane, responsável técnica da IL Ambiental</h2>
             <div className="quem-subtitulo">
-              Engenheira Florestal (UFPA) · Especialista em Direito Agroambiental · CREA-PA 1521301735
+              Engenheira Florestal (UEPA) · Pós-graduação em Direito Ambiental (CESUPA) · CREA-PA 1521301735
             </div>
             <p className="quem-bio">
               Todos os diagnósticos e projetos da IL Ambiental têm coordenação técnica direta da Isabela, com experiência em órgãos públicos (SEMMA e Emater) e no setor privado. A formação técnica e jurídica garante que cada entrega considere, ao mesmo tempo, o que a licença exige e o que a legislação cobra.
@@ -700,20 +691,6 @@ function QuemConduz() {
               {selos.map((s) => (
                 <span key={s} className="quem-selo">{s}</span>
               ))}
-            </div>
-            <div style={{ marginTop: "32px" }}>
-              <a
-                href={whatsappHref()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primario btn-icon"
-                style={{ display: "inline-flex" }}
-                onClick={() => trackWA("quem-conduz")}
-              >
-                <IconWhatsApp />
-                Solicitar o diagnóstico pelo WhatsApp
-              </a>
-              <p className="btn-microtexto">Você fala com a IL Ambiental. Retorno em até 1 dia útil.</p>
             </div>
           </div>
         </div>
@@ -726,8 +703,8 @@ function QuemConduz() {
 
 function EmpresasAtendidas() {
   const empresas = [
-    { nome: "Tropoc", setor: "Beneficiamento de pimenta-do-reino" },
-    { nome: "Fruta Pronta", setor: "Produção de polpa de açaí" },
+    { nome: "Tropoc", setor: "Multinacional do beneficiamento de pimenta-do-reino" },
+    { nome: "Fruta Pronta", setor: "Produção de polpa de açaí, Portel (PA)" },
     { nome: "Transzilli", setor: "Transporte, armazenagem e distribuição" },
   ];
 
@@ -760,7 +737,7 @@ const faqItens = [
   },
   {
     pergunta: "Por que vocês oferecem o diagnóstico sem custo?",
-    resposta: "Porque é a melhor forma de mostrar o trabalho na prática. Algumas empresas contratam serviços depois; outras usam o documento por conta própria. As duas situações são bem-vindas.",
+    resposta: "Porque uma gestão ambiental consistente começa por um levantamento correto. O diagnóstico permite que a empresa conheça sua situação e que a IL Ambiental dimensione com precisão o apoio necessário.",
   },
   {
     pergunta: "Quanto tempo leva?",
@@ -929,7 +906,7 @@ function CtaFinal() {
             <div className="tag-label tag-label--bege">Próximo passo</div>
             <h2 className="titulo-secao">Comece sabendo exatamente onde sua empresa está.</h2>
             <p className="cta-subtitulo">
-              Peça o Diagnóstico Vértice. A análise é feita pela responsável técnica, sem custo e sem compromisso de contratação.
+              Peça o Diagnóstico Vértice. A análise é conduzida pela equipe técnica da IL Ambiental, sob coordenação da responsável técnica, sem compromisso de contratação.
             </p>
             <div>
               <a
@@ -942,7 +919,7 @@ function CtaFinal() {
                 <IconWhatsApp />
                 Solicitar o diagnóstico pelo WhatsApp
               </a>
-              <p className="btn-microtexto">Você fala com a IL Ambiental. Retorno em até 1 dia útil.</p>
+              <p className="btn-microtexto">Nossa equipe técnica retorna em até 1 dia útil.</p>
             </div>
 
             <div className="cta-contatos">
@@ -1112,7 +1089,7 @@ function CtaFinal() {
                 </p>
 
                 <p className="form-micro">
-                  Retorno em até 1 dia útil. Sem custo e sem compromisso de contratação. Ao enviar, você concorda que a IL Ambiental use estes dados apenas para responder ao seu pedido.{" "}
+                  Sem compromisso de contratação. Ao enviar, você concorda que a IL Ambiental use estes dados apenas para responder ao seu pedido.{" "}
                   <a href="https://ilambiental.com.br/privacidade" target="_blank" rel="noopener noreferrer" className="form-link">
                     Política de Privacidade
                   </a>.
@@ -1173,12 +1150,6 @@ declare const ilLoadTracking: (() => void) | undefined;
 // ─── App ──────────────────────────────────────────────────────────────────────
 
 export default function App() {
-  // Dispara PageView quando o tracking já estava carregado (consentimento anterior)
-  useEffect(() => {
-    if (typeof fbq !== "undefined") fbq("track", "PageView");
-    if (typeof gtag !== "undefined") gtag("event", "page_view");
-  }, []);
-
   return (
     <>
       <Nav />

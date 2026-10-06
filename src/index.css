@@ -1364,7 +1364,7 @@ text-underline-offset: 2px;
   .setor-tag { font-size: 11px; padding: 4px 12px; }
 
   /* LC-10: sentinela ver mais */
-  .sentinela-lista-wrapper--expandido { max-height: 800px; }
+  .sentinela-lista-wrapper--expandido { max-height: 1400px; }
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -1436,7 +1436,7 @@ max-height: 0;
 transition: max-height 0.35s ease;
 }
 .sentinela-lista-wrapper--expandido {
-max-height: 600px;
+max-height: 1200px;
 }
 .sentinela-ver-mais {
 display: flex;
@@ -1678,4 +1678,23 @@ border-left: 3px solid var(--marrom);
     font-size: 14px;
     padding: 13px 16px;
   }
+}
+
+/* Posicionamento: gestão contínua (abaixo da faixa de autoridade) */
+.autoridade-posicionamento {
+text-align: center;
+font-size: 14px;
+color: var(--texto-medio);
+margin: 20px auto 0;
+max-width: 720px;
+line-height: 1.6;
+}
+.sentinela-escopo {
+font-size: 13px;
+font-style: italic;
+color: var(--marrom);
+margin-top: 14px;
+}
+@media (max-width: 600px) {
+  .autoridade-posicionamento { font-size: 13px; margin-top: 16px; }
 }
