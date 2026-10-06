@@ -240,7 +240,7 @@ function Hero() {
 function AutoridadeFaixa() {
   const itens = [
     { icone: <IconCheck color="#734120" />, texto: "Análise feita pela responsável técnica da IL Ambiental" },
-    { icone: <IconDoc color="#734120" />, texto: "Engenharia Florestal (UEPA) e pós-graduação em Direito Ambiental (CESUPA)" },
+    { icone: <IconDoc color="#734120" />, texto: "Engenharia Florestal (UEPA) e pós-graduação em Direito Agroambiental (CESUPA)" },
     { icone: <IconDoc color="#734120" />, texto: "Documento com as obrigações dos próximos 12 meses" },
     { icone: <IconCheck color="#734120" />, texto: "Sem compromisso de contratação" },
   ];
@@ -659,7 +659,7 @@ function DepoisDiagnostico() {
 function QuemConduz() {
   const selos = [
     "Engenharia Florestal",
-    "Direito Ambiental (CESUPA)",
+    "Direito Agroambiental (CESUPA)",
     "CREA-PA 1521301735",
     "Cerca de 50 processos protocolados",
   ];
@@ -682,7 +682,7 @@ function QuemConduz() {
             <div className="tag-label tag-label--bege">Coordenação técnica</div>
             <h2 className="titulo-secao">Isabela Loiane, responsável técnica da IL Ambiental</h2>
             <div className="quem-subtitulo">
-              Engenheira Florestal (UEPA) · Pós-graduação em Direito Ambiental (CESUPA) · CREA-PA 1521301735
+              Engenheira Florestal (UEPA) · Pós-graduação em Direito Agroambiental (CESUPA) · CREA-PA 1521301735
             </div>
             <p className="quem-bio">
               Todos os diagnósticos e projetos da IL Ambiental têm coordenação técnica direta da Isabela, com experiência em órgãos públicos (SEMMA e Emater) e no setor privado. A formação técnica e jurídica garante que cada entrega considere, ao mesmo tempo, o que a licença exige e o que a legislação cobra.
