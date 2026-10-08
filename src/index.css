@@ -1716,3 +1716,19 @@ text-transform: uppercase;
 letter-spacing: 0.06em;
 }
 .tabela-cartao-valor { text-align: left; }
+
+/* Comparativo: no celular mostra os cartões com rótulos (vem depois da regra base) */
+@media (max-width: 600px) {
+  .tabela-desktop { display: none; }
+  .tabela-mobile { display: block; }
+}
+.tabela-cartao-rotulo { color: #B5895E; font-family: 'Poppins', sans-serif; }
+
+/* Rodapé: slogan */
+.footer-slogan {
+font-family: 'Comfortaa', sans-serif;
+font-weight: 700;
+color: #DFC49F;
+font-size: 15px;
+margin-bottom: 8px;
+}

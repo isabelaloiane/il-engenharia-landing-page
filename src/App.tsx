@@ -685,7 +685,7 @@ function QuemConduz() {
               Engenheira Florestal (UEPA) · Pós-graduação em Direito Agroambiental (CESUPA) · CREA-PA 1521301735
             </div>
             <p className="quem-bio">
-              Todos os diagnósticos e projetos da IL Ambiental têm coordenação técnica direta da Isabela, com experiência em órgãos públicos (SEMMA e Emater) e no setor privado. A formação técnica e jurídica garante que cada entrega considere, ao mesmo tempo, o que a licença exige e o que a legislação cobra.
+              Todos os diagnósticos e projetos da IL Ambiental têm coordenação técnica direta da Isabela, que iniciou a trajetória em estágios na SEMMA e na Emater e atuou por quase quatro anos como responsável técnica no setor privado. A formação técnica e jurídica permite que cada entrega considere, ao mesmo tempo, o que a licença exige e o que a legislação cobra.
             </p>
             <div className="quem-selos">
               {selos.map((s) => (
@@ -1111,6 +1111,7 @@ function Footer() {
       <div className="container">
         <div className="footer-conteudo">
           <div className="footer-bloco">
+            <div className="footer-slogan">Gestão ambiental que sustenta negócios.</div>
             <div className="footer-marca">IL Ambiental · Engenharia e consultoria ambiental · Belém, Pará</div>
             <div className="footer-resp">
               Responsável técnica: Isabela Loiane, Engenheira Florestal, CREA-PA 1521301735
