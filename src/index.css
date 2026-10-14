@@ -1717,8 +1717,8 @@ letter-spacing: 0.06em;
 }
 .tabela-cartao-valor { text-align: left; }
 
-/* Comparativo: no celular mostra os cartões com rótulos (vem depois da regra base) */
-@media (max-width: 600px) {
+/* Comparativo: até 900px mostra os cartões com rótulos (a tabela larga escondia a coluna de rótulos entre 601 e 900px) */
+@media (max-width: 900px) {
   .tabela-desktop { display: none; }
   .tabela-mobile { display: block; }
 }
@@ -1732,3 +1732,6 @@ color: #DFC49F;
 font-size: 15px;
 margin-bottom: 8px;
 }
+
+/* Evita rolagem lateral na seção final (filhos do grid podem encolher) */
+.cta-grid > * { min-width: 0; }
