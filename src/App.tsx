@@ -220,7 +220,7 @@ function Hero() {
 
           <div className="hero-foto-wrapper">
             <img
-              src="/isabela-loiane.webp"
+              src="/foto-topo-2611.webp"
               alt="Isabela Loiane, coordenação técnica da IL Ambiental"
               className="hero-foto"
               width="480"
@@ -670,7 +670,7 @@ function QuemConduz() {
         <div className="quem-grid">
           <div className="quem-foto-lado">
             <img
-              src="/isabela-hero.webp"
+              src="/foto-coordenacao-2611.webp"
               alt="Isabela Loiane, responsável técnica da IL Ambiental"
               className="quem-foto"
               width="400"
