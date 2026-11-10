@@ -674,7 +674,7 @@ function QuemConduz() {
               alt="Isabela Loiane, responsável técnica da IL Ambiental"
               className="quem-foto"
               width="400"
-              height="533"
+              height="500"
               loading="lazy"
             />
           </div>
