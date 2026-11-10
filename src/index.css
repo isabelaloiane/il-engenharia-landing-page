@@ -1735,3 +1735,19 @@ margin-bottom: 8px;
 
 /* Evita rolagem lateral na seção final (filhos do grid podem encolher) */
 .cta-grid > * { min-width: 0; }
+
+/* Comparativo, reforço: se a tabela larga aparecer abaixo de 900px, o critério vira rótulo acima dos valores (nunca some) */
+@media (max-width: 900px) {
+  .tabela-row .tabela-cell--criterio {
+    display: block;
+    grid-column: 1 / -1;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #B5895E;
+    padding-bottom: 0;
+  }
+  .tabela-header .tabela-cell--criterio { display: none; }
+}
