@@ -1191,8 +1191,111 @@ function useReveal() {
   }, []);
 }
 
+// ─── Faixas que arrastam para o lado (celular): setas, pontos e dica de movimento ─
+
+const CARROSSEIS = [".problema-grid", ".depois-cards", ".empresas-grid"];
+
+function svgSeta(direcao: "esq" | "dir") {
+  const d = direcao === "esq" ? "M12.5 5l-5 5 5 5" : "M7.5 5l5 5-5 5";
+  return `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="${d}" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+}
+
+function useCarrosseis() {
+  useEffect(() => {
+    const limpezas: Array<() => void> = [];
+    CARROSSEIS.forEach((sel) => {
+      const trilho = document.querySelector<HTMLElement>(sel);
+      if (!trilho || trilho.dataset.carrossel) return;
+      trilho.dataset.carrossel = "1";
+      const itens = Array.from(trilho.children) as HTMLElement[];
+      if (itens.length < 2) return;
+
+      const controles = document.createElement("div");
+      controles.className = "carrossel-controles";
+      const ant = document.createElement("button");
+      ant.type = "button";
+      ant.className = "carrossel-seta";
+      ant.setAttribute("aria-label", "Anterior");
+      ant.innerHTML = svgSeta("esq");
+      const prox = document.createElement("button");
+      prox.type = "button";
+      prox.className = "carrossel-seta carrossel-seta--prox";
+      prox.setAttribute("aria-label", "Próximo");
+      prox.innerHTML = svgSeta("dir");
+      const pontos = document.createElement("div");
+      pontos.className = "carrossel-pontos";
+      const bolinhas = itens.map((_, i) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "carrossel-ponto";
+        b.setAttribute("aria-label", `Ir para o cartão ${i + 1}`);
+        b.addEventListener("click", () => irPara(i));
+        pontos.appendChild(b);
+        return b;
+      });
+      controles.append(ant, pontos, prox);
+      trilho.insertAdjacentElement("afterend", controles);
+
+      const atual = () => {
+        const x = trilho.scrollLeft;
+        let melhor = 0;
+        itens.forEach((it, i) => {
+          if (Math.abs(it.offsetLeft - trilho.offsetLeft - x - parseFloat(getComputedStyle(trilho).paddingLeft)) <
+              Math.abs(itens[melhor].offsetLeft - trilho.offsetLeft - x - parseFloat(getComputedStyle(trilho).paddingLeft))) melhor = i;
+        });
+        return melhor;
+      };
+      const irPara = (i: number) => {
+        const alvo = itens[Math.max(0, Math.min(itens.length - 1, i))];
+        trilho.scrollTo({ left: alvo.offsetLeft - trilho.offsetLeft - parseFloat(getComputedStyle(trilho).paddingLeft), behavior: "smooth" });
+      };
+      const atualizar = () => {
+        const i = atual();
+        bolinhas.forEach((b, j) => b.classList.toggle("carrossel-ponto--ativo", j === i));
+        const noInicio = trilho.scrollLeft <= 4;
+        const noFim = trilho.scrollLeft + trilho.clientWidth >= trilho.scrollWidth - 4;
+        ant.disabled = noInicio;
+        prox.disabled = noFim;
+        trilho.classList.toggle("carrossel--fim", noFim);
+      };
+      ant.addEventListener("click", () => irPara(atual() - 1));
+      prox.addEventListener("click", () => irPara(atual() + 1));
+      trilho.addEventListener("scroll", atualizar, { passive: true });
+      window.addEventListener("resize", atualizar);
+      atualizar();
+
+      // Dica de movimento: na primeira vez que a faixa aparece, os cartões "espiam" para o lado
+      let obs: IntersectionObserver | null = null;
+      const reduz = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (!reduz && "IntersectionObserver" in window) {
+        obs = new IntersectionObserver(
+          ([e]) => {
+            if (e.isIntersecting && trilho.scrollWidth > trilho.clientWidth + 4) {
+              trilho.classList.add("carrossel--dica");
+              setTimeout(() => trilho.classList.remove("carrossel--dica"), 1800);
+              obs?.disconnect();
+            }
+          },
+          { threshold: 0.6 }
+        );
+        obs.observe(trilho);
+      }
+
+      limpezas.push(() => {
+        trilho.removeEventListener("scroll", atualizar);
+        window.removeEventListener("resize", atualizar);
+        obs?.disconnect();
+        controles.remove();
+        delete trilho.dataset.carrossel;
+      });
+    });
+    return () => limpezas.forEach((f) => f());
+  }, []);
+}
+
 export default function App() {
   useReveal();
+  useCarrosseis();
   return (
     <>
       <Nav />

@@ -2215,3 +2215,52 @@ html { scroll-behavior: smooth; }
   .empresa-item { border: 1px solid rgba(115, 65, 32, 0.12); }
   .empresa-item:last-child { border-bottom: 1px solid rgba(115, 65, 32, 0.12); }
 }
+
+/* ---------- Indicadores das faixas que arrastam para o lado ---------- */
+.carrossel-controles { display: none; }
+@media (max-width: 600px) {
+  .carrossel-controles {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    margin: 6px 0 4px;
+  }
+  .carrossel-seta {
+    width: 40px; height: 40px; flex: 0 0 40px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: var(--marrom); color: #fff; border: 0; cursor: pointer;
+    box-shadow: 0 4px 12px rgba(69, 40, 22, 0.18);
+    transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
+  }
+  .carrossel-seta:active { transform: scale(0.94); }
+  .carrossel-seta:disabled { opacity: 0.3; box-shadow: none; cursor: default; }
+  .carrossel-seta--prox:not(:disabled) { animation: il-seta 1.6s ease-in-out infinite; }
+  @keyframes il-seta { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(4px); } }
+  .carrossel-pontos { display: flex; gap: 8px; justify-content: center; flex: 1; }
+  .carrossel-ponto {
+    width: 8px; height: 8px; padding: 0; border: 0; border-radius: 999px; cursor: pointer;
+    background: rgba(115, 65, 32, 0.25); transition: width 0.25s ease, background 0.25s ease;
+  }
+  .carrossel-ponto--ativo { width: 24px; background: var(--marrom); }
+
+  /* Nas seções escuras, setas e pontos em bege */
+  #problema .carrossel-seta { background: var(--bege-claro); color: var(--marrom-escuro); }
+  #problema .carrossel-ponto { background: rgba(223, 196, 159, 0.3); }
+  #problema .carrossel-ponto--ativo { background: var(--bege-claro); }
+
+  /* Borda direita esmaecida enquanto houver mais cartões para ver */
+  .problema-grid, .depois-cards, .empresas-grid, .setores-linha {
+    -webkit-mask-image: linear-gradient(to right, #000 82%, transparent);
+            mask-image: linear-gradient(to right, #000 82%, transparent);
+  }
+  .carrossel--fim { -webkit-mask-image: none; mask-image: none; }
+
+  /* Dica: os cartões deslizam um pouco para o lado e voltam */
+  .carrossel--dica > * { animation: il-espiar 1.6s cubic-bezier(0.45, 0, 0.25, 1) 0.3s 1; }
+  @keyframes il-espiar { 0%, 100% { transform: translateX(0); } 40% { transform: translateX(-48px); } 70% { transform: translateX(-48px); } }
+}
+@media (max-width: 600px) and (prefers-reduced-motion: reduce) {
+  .carrossel-seta--prox:not(:disabled), .carrossel--dica > * { animation: none; }
+}
+@media (max-width: 600px) {
+  .depois-cards + .carrossel-controles { margin-bottom: 28px; }
+  .depois-cards { margin-bottom: 0; }
+}
