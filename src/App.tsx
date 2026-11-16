@@ -209,9 +209,12 @@ function Hero() {
               </div>
               <a href="#cta-final" className="btn-link">Prefiro preencher um formulário</a>
             </div>
-            {/* LR-01: linha de prova + municípios, em uma linha curta */}
+            {/* LR-01: linha de prova */}
             <p className="hero-prova">
-              CREA-PA 1521301735 · Cerca de 50 processos protocolados · Belém e Região Metropolitana
+              CREA-PA 1521301735 · Cerca de 50 processos protocolados em órgãos ambientais · Retorno em até 1 dia útil
+            </p>
+            <p className="hero-micro">
+              Para empresas de Belém, Ananindeua, Marituba, Benevides, Santa Isabel do Pará e Castanhal.
             </p>
           </div>
 
@@ -265,12 +268,12 @@ function AutoridadeFaixa() {
 
 function ParaQuem() {
   const itens = [
-    "Não sabe o prazo da licença e outorga.",
-    "Tem condicionantes sem comprovação.",
-    "Prazos de RIAA e PGRS sem controle.",
-    "Recebeu notificação de órgão ambiental.",
-    "Vai ampliar, financiar ou ser auditada.",
-    "Nunca levantou todas as obrigações.",
+    "Não sabe com certeza quando vencem a Licença de Operação ou a outorga da empresa.",
+    "A licença tem condicionantes e você não sabe se todas estão comprovadas.",
+    "A empresa precisa entregar RIAA, PGRS ou outros relatórios e ninguém acompanha os prazos.",
+    "Recebeu uma notificação ou exigência de órgão ambiental.",
+    "Vai ampliar a operação, pedir financiamento ou passar por auditoria de um cliente.",
+    "Nunca teve um levantamento completo das obrigações ambientais da empresa.",
   ];
 
   // LR-08: setores atendidos
@@ -315,18 +318,18 @@ function ParaQuem() {
 
 function OQueRecebe() {
   const recebe = [
-    "Situação de licenças, outorgas e afins.",
-    "Condicionantes e o que já foi comprovado.",
-    "Calendário de prazos para 12 meses.",
-    "Pendências e riscos, por prioridade.",
-    "O que fazer e em que ordem.",
+    "Situação atual das licenças, outorgas e autorizações da empresa.",
+    "Lista das condicionantes e do que já está comprovado.",
+    "Calendário com as obrigações e os prazos dos próximos 12 meses.",
+    "Pendências e riscos identificados, por ordem de prioridade.",
+    "Recomendação do que fazer e em que ordem.",
   ];
 
   const passos = [
-    { num: "01", texto: "Contato pelo WhatsApp ou formulário." },
-    { num: "02", texto: "Enviamos a lista de documentos." },
-    { num: "03", texto: "A responsável técnica analisa." },
-    { num: "04", texto: "Entrega do documento, com explicação." },
+    { num: "01", texto: "Você chama no WhatsApp ou preenche o formulário." },
+    { num: "02", texto: "Enviamos a lista de documentos que precisamos analisar." },
+    { num: "03", texto: "A responsável técnica analisa a situação da empresa." },
+    { num: "04", texto: "Você recebe o documento e uma conversa para explicar cada ponto." },
   ];
 
   return (
@@ -391,19 +394,19 @@ function MetodoTrabalho() {
   const etapas = [
     {
       titulo: "Levantamento documental",
-      texto: "Licenças, condicionantes e relatórios.",
+      texto: "Licenças, outorgas, autorizações, condicionantes e relatórios entregues.",
     },
     {
       titulo: "Enquadramento legal",
-      texto: "Normas federais, estaduais e municipais.",
+      texto: "Obrigações federais, estaduais e municipais aplicáveis à atividade.",
     },
     {
       titulo: "Matriz de prazos e riscos",
-      texto: "Prazos, pendências e risco de autuação.",
+      texto: "O que vence, o que está pendente e o que pode gerar autuação.",
     },
     {
       titulo: "Plano de 12 meses",
-      texto: "Ações, prazos e responsáveis.",
+      texto: "Ações em ordem de prioridade, com responsável e prazo.",
     },
   ];
 
@@ -434,19 +437,19 @@ function Problema() {
   const itens = [
     {
       titulo: "Licença a vencer",
-      texto: "Renovação pedida com 120 dias de antecedência (LC 140/2011, art. 14, § 4º).",
+      texto: "A renovação deve ser pedida com antecedência mínima de 120 dias (Lei Complementar 140/2011, art. 14, § 4°).",
     },
     {
       titulo: "Condicionantes sem comprovação",
-      texto: "Cumprida e não registrada, conta como não cumprida.",
+      texto: "Cumprida e não registrada, para o órgão a obrigação não foi cumprida.",
     },
     {
       titulo: "Água sem outorga",
-      texto: "Captar água ou lançar efluentes exige outorga própria.",
+      texto: "Captar água ou lançar efluentes exige outorga própria, independente da licença.",
     },
     {
       titulo: "Relatórios desatualizados",
-      texto: "RIAA e PGRS devem refletir a operação atual.",
+      texto: "RIAA e PGRS precisam refletir a operação atual da empresa.",
     },
   ];
 
@@ -457,7 +460,7 @@ function Problema() {
           <div className="tag-label tag-label--bege">O cenário</div>
           <h2 className="titulo-secao">Ter licença não encerra as obrigações ambientais.</h2>
           <p className="subtitulo-secao">
-            Depois dela vêm prazos, condicionantes, relatórios e outorga. Sem acompanhamento, o problema aparece na fiscalização ou na renovação.
+            Depois da licença vêm os prazos, as condicionantes, os relatórios e a outorga da água. Quando ninguém acompanha, o problema aparece na fiscalização ou na renovação.
           </p>
         </div>
 
@@ -551,27 +554,12 @@ function DepoisDiagnostico() {
 
         <div className="sentinela-bloco">
           <div className="sentinela-bloco-tag">Programa Sentinela · pago · contrato anual</div>
-          <p className="sentinela-resumo">
-            Gestão ambiental contínua por 12 meses, com escopo definido a partir do Diagnóstico Vértice.
+          <h3 className="sentinela-bloco-titulo">Como funciona o Programa Sentinela</h3>
+          <p className="sentinela-bloco-texto">
+            No Sentinela, a IL Ambiental acompanha de forma sistemática as obrigações ambientais da sua empresa durante o período contratado e organiza o que precisa ser feito ao longo do ano.
           </p>
-          <button
-            className="sentinela-ver-mais"
-            onClick={() => setSentinelaExpandido(!sentinelaExpandido)}
-            aria-expanded={sentinelaExpandido}
-            aria-controls="sentinela-detalhes"
-          >
-            {sentinelaExpandido ? "Recolher" : "Ver o que o Sentinela inclui"}
-            <IconChevron open={sentinelaExpandido} />
-          </button>
-          <div
-            id="sentinela-detalhes"
-            className={`sentinela-lista-wrapper${sentinelaExpandido ? " sentinela-lista-wrapper--expandido" : ""}`}
-          >
-            <h3 className="sentinela-bloco-titulo">Como funciona o Programa Sentinela</h3>
-            <p className="sentinela-bloco-texto">
-              No Sentinela, a IL Ambiental acompanha de forma sistemática as obrigações ambientais da sua empresa durante o período contratado e organiza o que precisa ser feito ao longo do ano.
-            </p>
-            <div className="sentinela-subtitulo">O que pode incluir</div>
+          {/* LC-10: lista colapsável no mobile */}
+          <div className={`sentinela-lista-wrapper${sentinelaExpandido ? " sentinela-lista-wrapper--expandido" : ""}`}>
             <ul className="sentinela-lista">
               {sentinelaItens.map((item, i) => (
                 <li key={i} className="sentinela-item">
@@ -582,6 +570,14 @@ function DepoisDiagnostico() {
             </ul>
             <p className="sentinela-escopo">O escopo de cada contrato é definido a partir do Diagnóstico Vértice.</p>
           </div>
+          <button
+            className="sentinela-ver-mais"
+            onClick={() => setSentinelaExpandido(!sentinelaExpandido)}
+            aria-expanded={sentinelaExpandido}
+          >
+            {sentinelaExpandido ? "Recolher" : "Ver o que o Sentinela inclui"}
+            <IconChevron open={sentinelaExpandido} />
+          </button>
         </div>
 
         {/* LC-04: tabela desktop */}

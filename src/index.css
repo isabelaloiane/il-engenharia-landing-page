@@ -1926,3 +1926,10 @@ margin-bottom: 8px;
   .para-quem-item { padding: 6px 0; background: none; border: 0; gap: 8px; }
   .metodo-etapa { padding: 12px 14px; }
 }
+/* Hero: linhas de prova e municípios compactas (texto original completo) */
+.hero-prova { margin-bottom: 4px; }
+.hero-micro { margin-top: 0; font-size: 13px; line-height: 1.5; }
+@media (max-width: 600px) { .hero-micro { font-size: 12px; } }
+/* Textos originais quebram em mais de uma linha: ícone alinhado à primeira linha */
+.para-quem-item, .recebe-item { align-items: flex-start; }
+.para-quem-icone, .recebe-check { margin-top: 3px; flex: 0 0 auto; }
