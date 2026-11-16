@@ -1933,3 +1933,201 @@ margin-bottom: 8px;
 /* Textos originais quebram em mais de uma linha: ícone alinhado à primeira linha */
 .para-quem-item, .recebe-item { align-items: flex-start; }
 .para-quem-icone, .recebe-check { margin-top: 3px; flex: 0 0 auto; }
+
+/* ============================================================================
+   EXPERIÊNCIA MOBILE (v4): mais respiro, leitura confortável e movimento.
+   Somente apresentação. Nenhum texto alterado. O desktop não muda.
+   ============================================================================ */
+
+@media (max-width: 600px) {
+  /* Margens laterais e respiro entre seções */
+  .container { padding: 0 22px; }
+  #hero { padding: 96px 0 48px; }
+  #para-quem, #o-que-recebe, #metodo, #problema, #depois-diagnostico,
+  #quem-conduz, #empresas, #faq { padding: 56px 0; }
+  #cta-final { padding: 56px 0 112px; }
+  .autoridade-faixa { padding: 32px 0; }
+
+  /* Cabeçalhos de seção: alinhados à esquerda, com hierarquia clara */
+  .secao-header { text-align: left; margin-bottom: 28px; }
+  .secao-header .tag-label { display: inline-block; margin-bottom: 10px; }
+  .titulo-secao { font-size: 25px; line-height: 1.28; letter-spacing: -0.01em; }
+  .titulo-secao-sm { font-size: 22px; line-height: 1.3; margin-bottom: 18px; }
+  .subtitulo-secao { text-align: left; margin-top: 12px; }
+
+  /* Texto corrido mais arejado */
+  .subtitulo-secao, .hero-subtitulo, .cta-subtitulo, .quem-bio, .faq-resposta p,
+  .para-quem-texto, .recebe-item, .passo-texto, .metodo-texto, .problema-card-texto,
+  .depois-card-texto, .sentinela-bloco-texto, .sentinela-item, .para-quem-criterio {
+    font-size: 16px; line-height: 1.7;
+  }
+
+  /* Hero */
+  .hero-tag { font-size: 11px; line-height: 1.6; margin-bottom: 16px; }
+  .hero-titulo { font-size: 30px; line-height: 1.2; letter-spacing: -0.015em; }
+  .hero-subtitulo { margin-top: 18px; }
+  .hero-ctas { margin-top: 28px; gap: 18px; }
+  .hero-ctas .btn-primario { width: 100%; justify-content: center; padding: 18px 20px; }
+  .btn-microtexto { margin-top: 10px; }
+  .hero-prova, .hero-micro { font-size: 13px; line-height: 1.6; }
+  .hero-prova { margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(223, 196, 159, 0.15); }
+  .hero-micro { margin-top: 6px; }
+  .hero-foto-wrapper { margin-top: 36px; }
+  .hero-foto { max-height: 420px; width: 100%; object-fit: cover; object-position: center 20%; border-radius: 14px; }
+  .hero-foto-legenda { margin-top: 10px; }
+
+  /* Faixa de autoridade em cartões */
+  .autoridade-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+  .autoridade-item { background: #fff; border-radius: 12px; padding: 14px 16px; gap: 12px; box-shadow: 0 1px 3px rgba(69, 40, 22, 0.06); }
+  .autoridade-texto { font-size: 14px; line-height: 1.55; }
+  .autoridade-posicionamento { font-size: 15px; line-height: 1.7; margin-top: 22px; text-align: left; }
+
+  /* Para quem: cada item vira um cartão */
+  .setores-linha { margin: 0 -22px 24px; padding: 2px 22px 6px; scroll-padding: 22px; }
+  .setor-tag { padding: 8px 14px; }
+  .para-quem-grid { gap: 12px; }
+  .para-quem-item {
+    padding: 16px 18px; gap: 14px; border-radius: 12px;
+    background: rgba(223, 196, 159, 0.07); border: 1px solid rgba(223, 196, 159, 0.14);
+  }
+  .para-quem-criterio { margin-top: 28px; padding-top: 22px; text-align: left; }
+
+  /* O que recebe e Como funciona */
+  .recebe-grid { gap: 48px; }
+  .recebe-lista { gap: 14px; }
+  .recebe-item { gap: 14px; }
+  .passos-lista { gap: 0; margin-bottom: 24px; position: relative; }
+  .passo-item { align-items: flex-start; gap: 16px; padding: 0 0 22px; position: relative; }
+  .passo-item:not(:last-child)::before {
+    content: ""; position: absolute; left: 17px; top: 38px; bottom: 4px;
+    width: 2px; background: rgba(115, 65, 32, 0.15);
+  }
+  .passo-num { width: 36px; height: 36px; flex: 0 0 36px; }
+  .passo-texto { padding-top: 5px; }
+  .prazo-bloco { padding: 16px 18px; border-radius: 12px; }
+  .recebe-cta { margin-top: 36px; }
+  .recebe-cta .btn-primario { width: 100%; justify-content: center; padding: 17px 20px; }
+
+  /* Método */
+  .metodo-grid { gap: 14px; }
+  .metodo-etapa { padding: 22px 22px; border-radius: 14px; }
+  .metodo-num { font-size: 26px; }
+  .metodo-titulo { margin: 10px 0 6px; font-size: 17px; }
+
+  /* Cenário */
+  .problema-grid { gap: 14px; }
+  .problema-card { padding: 20px 22px; border-radius: 14px; }
+  .problema-card-titulo { font-size: 17px; margin-bottom: 8px; }
+  .problema-nota-legal { margin-top: 24px; text-align: left; font-size: 14px; line-height: 1.6; }
+
+  /* Depois do diagnóstico */
+  .depois-cards { gap: 14px; margin-bottom: 28px; }
+  .depois-card { padding: 22px 22px; border-radius: 14px; }
+  .depois-card-titulo { font-size: 19px; margin-top: 4px; }
+  .depois-card-texto { margin-top: 10px; }
+  .sentinela-bloco { padding: 24px 22px; border-radius: 14px; margin-bottom: 36px; }
+  .sentinela-bloco-titulo { margin: 10px 0 10px; }
+  .sentinela-ver-mais { margin-top: 14px; padding: 10px 0; font-size: 15px; }
+  .sentinela-item { padding: 6px 0; }
+  .tabela-titulo { text-align: left; margin-bottom: 18px; }
+  .tabela-cartao { border-radius: 14px; overflow: hidden; margin-bottom: 18px; }
+  .tabela-cartao-linha { padding: 14px 18px; }
+  .tabela-cartao-valor { font-size: 15px; line-height: 1.55; }
+  .depois-ctas { gap: 14px; margin-top: 8px; }
+  .depois-ctas .btn-primario, .depois-ctas .btn-secundario { width: 100%; justify-content: center; padding: 17px 20px; }
+
+  /* Quem conduz */
+  .quem-grid { gap: 32px; }
+  .quem-foto { max-height: 440px; width: 100%; object-fit: cover; object-position: center 25%; border-radius: 14px; }
+  .quem-subtitulo { margin: 12px 0 18px; line-height: 1.6; }
+  .quem-ler-mais { margin-top: 6px; font-size: 15px; }
+  .quem-selos { margin-top: 24px; gap: 10px; }
+
+  /* Empresas */
+  .empresas-grid { gap: 14px; }
+  .empresa-item { padding: 24px 20px; border-radius: 14px; }
+
+  /* FAQ */
+  .faq-lista { display: flex; flex-direction: column; gap: 10px; }
+  .faq-item { border-radius: 12px; }
+  .faq-pergunta { padding: 18px 18px; font-size: 16px; line-height: 1.45; gap: 14px; }
+  .faq-resposta p { padding: 0 18px 18px; }
+
+  /* CTA final e formulário */
+  .cta-grid { gap: 40px; }
+  .cta-lado-texto .btn-primario { width: 100%; justify-content: center; padding: 18px 20px; }
+  .cta-contatos { margin-top: 32px; gap: 16px; }
+  .form-contato { padding: 28px 22px; border-radius: 16px; }
+  .form-campo { margin-bottom: 18px; }
+  .form-campo input, .form-campo select { font-size: 16px; padding: 14px 14px; }
+
+  /* Rodapé */
+  footer { padding: 48px 0 120px; }
+  .footer-conteudo { gap: 28px; }
+}
+
+/* ---------- Movimento ---------- */
+html { scroll-behavior: smooth; }
+
+/* Entrada do hero */
+@keyframes il-sobe { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+@keyframes il-aparece { from { opacity: 0; transform: scale(0.97); } to { opacity: 1; transform: none; } }
+.hero-tag, .hero-titulo, .hero-subtitulo, .hero-ctas, .hero-prova, .hero-micro {
+  animation: il-sobe 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero-titulo { animation-delay: 0.08s; }
+.hero-subtitulo { animation-delay: 0.18s; }
+.hero-ctas { animation-delay: 0.28s; }
+.hero-prova, .hero-micro { animation-delay: 0.38s; }
+.hero-foto-wrapper { animation: il-aparece 1s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both; }
+
+/* Revelação ao rolar (a classe é aplicada pelo script; sem JS tudo aparece normalmente) */
+.js-reveal .reveal {
+  opacity: 0; transform: translateY(26px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0s);
+  will-change: opacity, transform;
+}
+.js-reveal .reveal.reveal--visivel { opacity: 1; transform: none; }
+
+/* Botão principal: brilho suave que passa periodicamente */
+.btn-primario { position: relative; overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease; }
+.btn-primario::after {
+  content: ""; position: absolute; top: 0; left: -60%; width: 40%; height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+  transform: skewX(-20deg); animation: il-brilho 4.5s ease-in-out 1.5s infinite; pointer-events: none;
+}
+@keyframes il-brilho { 0%, 70% { left: -60%; } 100% { left: 130%; } }
+.btn-primario:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(69, 40, 22, 0.25); }
+.btn-primario:active, .btn-secundario:active { transform: scale(0.98); }
+
+/* Cartões reagem ao toque e ao mouse */
+.metodo-etapa, .problema-card, .depois-card, .empresa-item, .para-quem-item, .autoridade-item, .passo-item, .faq-item {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+@media (hover: hover) {
+  .metodo-etapa:hover, .problema-card:hover, .depois-card:hover, .empresa-item:hover {
+    transform: translateY(-4px); box-shadow: 0 14px 30px rgba(69, 40, 22, 0.12);
+  }
+}
+.metodo-etapa:active, .problema-card:active, .depois-card:active, .empresa-item:active { transform: scale(0.99); }
+
+/* Barra fixa: entra deslizando com leve pulso no ícone */
+.sticky-bar { transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
+.sticky-bar--visivel svg, .sticky-bar--visible svg { animation: il-pulso 2.4s ease-in-out infinite; }
+@keyframes il-pulso { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
+
+/* Acordeões abrem com suavidade */
+.faq-resposta { transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease; opacity: 0; }
+.faq-item--aberto .faq-resposta { opacity: 1; }
+.sentinela-lista-wrapper { transition: max-height 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+
+/* Respeita quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .js-reveal .reveal { opacity: 1; transform: none; }
+}
+@media (max-width: 600px) {
+  /* Botões largos com texto em duas linhas: ícone junto ao texto */
+  .btn-primario.btn-icon { text-align: left; gap: 12px; }
+}

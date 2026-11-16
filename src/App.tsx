@@ -1147,7 +1147,52 @@ declare const ilLoadTracking: (() => void) | undefined;
 
 // ─── App ──────────────────────────────────────────────────────────────────────
 
+// ─── Movimento: revelação dos blocos ao rolar a página ─────────────────────────
+
+const REVEAL_GRUPOS = [
+  ".secao-header", ".autoridade-item", ".autoridade-posicionamento", ".setores-linha",
+  ".para-quem-item", ".para-quem-criterio", ".recebe-coluna .tag-label", ".recebe-coluna .titulo-secao-sm",
+  ".recebe-item", ".passo-item", ".prazo-bloco", ".recebe-cta", ".metodo-etapa", ".problema-card",
+  ".problema-nota-legal", ".depois-card", ".sentinela-bloco", ".tabela-wrapper", ".tabela-cartao",
+  ".depois-ctas", ".quem-foto-lado", ".quem-texto-lado", ".empresa-item", ".faq-item",
+  ".cta-lado-texto", ".cta-lado-form", ".footer-bloco",
+];
+
+function useReveal() {
+  useEffect(() => {
+    if (typeof window === "undefined" || !("IntersectionObserver" in window)) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const els: HTMLElement[] = [];
+    REVEAL_GRUPOS.forEach((sel) => {
+      document.querySelectorAll<HTMLElement>(sel).forEach((el) => {
+        if (el.classList.contains("reveal")) return;
+        // escalonamento entre irmãos do mesmo grupo
+        const irmaos = el.parentElement ? Array.from(el.parentElement.children).filter((c) => c.matches(sel)) : [el];
+        const idx = Math.max(0, irmaos.indexOf(el));
+        el.style.setProperty("--reveal-delay", `${Math.min(idx, 6) * 0.08}s`);
+        el.classList.add("reveal");
+        els.push(el);
+      });
+    });
+    document.documentElement.classList.add("js-reveal");
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("reveal--visivel");
+            obs.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
+    );
+    els.forEach((el) => obs.observe(el));
+    return () => obs.disconnect();
+  }, []);
+}
+
 export default function App() {
+  useReveal();
   return (
     <>
       <Nav />
