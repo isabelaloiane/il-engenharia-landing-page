@@ -2131,3 +2131,87 @@ html { scroll-behavior: smooth; }
   /* Botões largos com texto em duas linhas: ícone junto ao texto */
   .btn-primario.btn-icon { text-align: left; gap: 12px; }
 }
+
+/* ============================================================================
+   MOBILE v5: mais coisas lado a lado, menos "fila" para rolar.
+   Somente apresentação. Nenhum texto alterado.
+   ============================================================================ */
+@media (max-width: 600px) {
+  .container { padding: 0 18px; }
+
+  /* Faixa de credenciais: 2 x 2 */
+  .autoridade-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .autoridade-item { flex-direction: column; align-items: flex-start; gap: 8px; padding: 14px; }
+  .autoridade-texto { font-size: 13px; line-height: 1.45; }
+
+  /* Como funciona: passos 2 x 2 */
+  .passos-lista { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .passo-item {
+    flex-direction: column; align-items: flex-start; gap: 10px; padding: 14px;
+    background: #fff; border: 1px solid rgba(115, 65, 32, 0.12); border-radius: 12px;
+  }
+  .passo-item:not(:last-child)::before { display: none; }
+  .passo-texto { padding-top: 0; font-size: 14px; line-height: 1.5; }
+  .passo-num { width: 32px; height: 32px; flex: 0 0 32px; font-size: 13px; }
+
+  /* Método: 2 x 2 */
+  .metodo-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .metodo-etapa { padding: 16px 14px; }
+  .metodo-num { font-size: 22px; }
+  .metodo-titulo { font-size: 15px; line-height: 1.3; margin: 8px 0 6px; }
+  .metodo-texto { font-size: 14px; line-height: 1.5; }
+
+  /* Cenário, caminhos e empresas: cartões lado a lado, arrastando para o lado */
+  .problema-grid, .depois-cards, .empresas-grid {
+    display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+    margin-left: -18px; margin-right: -18px; padding: 4px 18px 10px; scroll-padding: 0 18px;
+  }
+  .problema-grid::-webkit-scrollbar, .depois-cards::-webkit-scrollbar, .empresas-grid::-webkit-scrollbar { display: none; }
+  .problema-card, .depois-card { flex: 0 0 82%; scroll-snap-align: start; }
+  .empresa-item { flex: 0 0 72%; scroll-snap-align: start; border: 1px solid rgba(115, 65, 32, 0.12); background: #fff; }
+  .depois-card { display: flex; flex-direction: column; }
+
+  /* Comparativo: Vértice e Sentinela lado a lado de verdade, rótulo em cima de cada linha */
+  .tabela-desktop { display: block; }
+  .tabela-mobile { display: none; }
+  .tabela-comparativo { min-width: 0; border-radius: 14px; overflow: hidden; }
+  .tabela-header, .tabela-row { grid-template-columns: 1fr 1fr; }
+  .tabela-header .tabela-cell { padding: 12px 12px; font-size: 14px; }
+  .tabela-row .tabela-cell { padding: 10px 12px; font-size: 14px; line-height: 1.45; }
+  .tabela-row .tabela-cell--criterio { padding: 12px 12px 0; }
+
+  /* Selos da coordenação técnica lado a lado */
+  .quem-selos { display: flex; flex-wrap: wrap; gap: 8px; }
+  .quem-selo { font-size: 12px; }
+
+  /* Contatos do CTA final em 2 colunas */
+  .cta-contatos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 12px; }
+  .cta-contato-item { min-width: 0; overflow-wrap: anywhere; font-size: 14px; }
+
+  /* Rodapé: contatos e links lado a lado */
+  .footer-conteudo { display: grid; grid-template-columns: 1fr; }
+  .footer-bloco:last-child { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .footer-contatos, .footer-links { min-width: 0; overflow-wrap: anywhere; }
+}
+@media (max-width: 600px) {
+  .setores-linha { margin: 0 -18px 24px; padding: 2px 18px 6px; scroll-padding: 18px; }
+  /* Cartões dentro das faixas que arrastam para o lado: revela a faixa inteira, não cada cartão */
+  .js-reveal .problema-grid > .reveal, .js-reveal .depois-cards > .reveal, .js-reveal .empresas-grid > .reveal {
+    opacity: 1; transform: none;
+  }
+}
+@media (max-width: 600px) {
+  .empresas-grid { flex-direction: row; grid-template-columns: none; border: 0; background: none; }
+  .depois-cards { align-items: flex-start; }
+  /* Contatos: WhatsApp e Instagram lado a lado, e-mail inteiro na linha de baixo */
+  .cta-contato-item { overflow-wrap: normal; }
+  .cta-contato-item:nth-child(2) { grid-column: 1 / -1; order: 3; }
+  .footer-bloco:last-child { display: block; }
+  .footer-contatos, .footer-links { overflow-wrap: normal; }
+}
+@media (max-width: 600px) {
+  .empresas-grid { flex-wrap: nowrap; justify-content: flex-start; border-radius: 0; overflow-x: auto; }
+  .empresa-item { border: 1px solid rgba(115, 65, 32, 0.12); }
+  .empresa-item:last-child { border-bottom: 1px solid rgba(115, 65, 32, 0.12); }
+}
