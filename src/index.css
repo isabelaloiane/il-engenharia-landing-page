@@ -1751,3 +1751,178 @@ margin-bottom: 8px;
   }
   .tabela-header .tabela-cell--criterio { display: none; }
 }
+
+/* ============================================================================
+   LAYOUT COMPACTO (v3): mais leve e legível no celular, mesma estrutura.
+   Fica no fim do arquivo de propósito, para prevalecer sobre as regras acima.
+   ============================================================================ */
+
+/* 1. Espaçamento entre seções: 72px no desktop (36 + 36), 48px no celular (24 + 24) */
+#hero { padding: 104px 0 36px; }
+#para-quem, #o-que-recebe, #metodo, #problema, #depois-diagnostico,
+#quem-conduz, #empresas, #faq { padding: 36px 0; }
+#cta-final { padding: 36px 0 96px; }
+.autoridade-faixa { padding: 20px 0; }
+.secao-header { margin-bottom: 24px; }
+
+/* Hierarquia: rótulo, título, texto */
+.tag-label { margin-bottom: 8px; }
+.subtitulo-secao { margin-top: 8px; }
+
+/* 2. Hero: linha única de prova */
+.hero-prova { margin-top: 16px; font-size: 13px; line-height: 1.5; }
+.hero-ctas { margin-top: 20px; gap: 12px; }
+
+/* 3. Para quem: chips e itens curtos */
+.setores-linha { gap: 8px; margin-bottom: 20px; }
+.para-quem-grid { gap: 10px 32px; }
+.para-quem-item { padding: 10px 14px; gap: 10px; align-items: center; }
+.para-quem-criterio { margin-top: 16px; }
+
+/* 4. O que recebe (lista compacta) e Como funciona (4 passos em faixa) */
+.recebe-grid { grid-template-columns: 1fr; gap: 28px; }
+.recebe-lista { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 32px; margin: 0; padding: 0; }
+.recebe-item { margin: 0; padding: 0; gap: 10px; align-items: center; }
+.passos-lista {
+  list-style: none; padding: 0; margin: 0 0 16px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+}
+.passo-item { flex-direction: column; gap: 8px; padding: 16px; background: #fff; border: 1px solid rgba(115, 65, 32, 0.12); border-radius: var(--raio); }
+.prazo-bloco { margin-top: 0; }
+.recebe-cta { text-align: center; margin-top: 28px; }
+
+/* 5. Método */
+.metodo-etapa { padding: 18px 20px; }
+.metodo-titulo { margin: 6px 0 4px; }
+
+/* 6. Cenário: 2 colunas no desktop */
+.problema-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.problema-card { padding: 18px 20px; }
+.problema-card-titulo { margin-bottom: 4px; }
+.problema-nota-legal { margin-top: 16px; }
+
+/* 7. Depois do diagnóstico: cards compactos e Sentinela expansível */
+.depois-cards { gap: 12px; margin-bottom: 20px; }
+.depois-card { padding: 20px 22px; }
+.depois-card-num { margin-bottom: 6px; }
+.depois-card-texto { margin-top: 6px; }
+.sentinela-bloco { padding: 20px 24px; margin-bottom: 28px; }
+.sentinela-resumo { margin: 6px 0 4px; font-size: 15px; line-height: 1.6; color: var(--texto-medio); }
+.sentinela-ver-mais { display: inline-flex; margin-top: 8px; }
+.sentinela-lista-wrapper { max-height: 0; overflow: hidden; }
+.sentinela-lista-wrapper--expandido { max-height: 2000px; }
+.sentinela-lista-wrapper .sentinela-bloco-titulo { margin-top: 16px; }
+.sentinela-subtitulo {
+  font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.06em; color: var(--bege-medio);
+  margin: 16px 0 8px;
+}
+.tabela-wrapper, .tabela-mobile { margin-bottom: 24px; }
+
+/* 8. Quem conduz: "Ler mais" só aparece no celular */
+.quem-ler-mais { display: none; }
+.quem-selos { margin-top: 16px; }
+
+/* 9. FAQ */
+.faq-item--aberto .faq-resposta { max-height: 600px; }
+
+/* 11. Barra fixa de WhatsApp: só no celular */
+@media (min-width: 769px) {
+  .sticky-bar { display: none; }
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 900px) {
+  .passos-lista { grid-template-columns: repeat(2, 1fr); }
+  .recebe-lista { grid-template-columns: 1fr; }
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 600px) {
+  /* 1. Espaçamento */
+  #hero { padding: 84px 0 24px; }
+  #para-quem, #o-que-recebe, #metodo, #problema, #depois-diagnostico,
+  #quem-conduz, #empresas, #faq { padding: 24px 0; }
+  #cta-final { padding: 24px 0 96px; }
+  .autoridade-faixa { padding: 16px 0; }
+  .secao-header { margin-bottom: 16px; }
+
+  /* 10. Tipografia: títulos até 26px, corpo 15 a 16px */
+  body { font-size: 15px; }
+  .hero-titulo { font-size: 26px; line-height: 1.25; }
+  .titulo-secao { font-size: 22px; line-height: 1.3; }
+  .titulo-secao-sm { font-size: 20px; line-height: 1.3; }
+  .subtitulo-secao, .hero-subtitulo, .cta-subtitulo, .quem-bio, .faq-resposta p,
+  .para-quem-texto, .recebe-item, .passo-texto, .metodo-texto, .problema-card-texto,
+  .depois-card-texto, .sentinela-bloco-texto, .sentinela-item, .para-quem-criterio {
+    font-size: 15px; line-height: 1.55;
+  }
+  .tag-label { font-size: 11px; }
+
+  /* 2. Hero: botão visível sem rolar */
+  .hero-subtitulo { margin-top: 12px; }
+  .hero-ctas { margin-top: 16px; }
+  .hero-prova { font-size: 12px; margin-top: 12px; }
+  .hero-foto { max-height: 260px; }
+  .hero-foto-wrapper { margin-top: 20px; }
+
+  /* Faixa de autoridade mais curta */
+  .autoridade-grid { gap: 8px; }
+  .autoridade-texto { font-size: 13px; }
+  .autoridade-posicionamento { font-size: 13px; margin-top: 10px; }
+
+  /* 3. Chips em uma linha com rolagem horizontal */
+  .setores-linha {
+    flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; margin: 0 -20px 16px; padding: 0 20px 4px;
+  }
+  .setores-linha::-webkit-scrollbar { display: none; }
+  .setor-tag { flex: 0 0 auto; white-space: nowrap; }
+  .para-quem-grid { gap: 8px; }
+  .para-quem-item { padding: 8px 12px; }
+
+  /* 4. Lista compacta e passos numerados */
+  .recebe-lista { gap: 8px; }
+  .passos-lista { grid-template-columns: 1fr; gap: 8px; }
+  .passo-item { flex-direction: row; align-items: center; gap: 12px; padding: 0; background: none; border: 0; }
+  .passo-num { flex: 0 0 auto; }
+  .recebe-cta { margin-top: 20px; }
+
+  /* 5. Método */
+  .metodo-grid { gap: 8px; }
+  .metodo-etapa { padding: 12px 16px; }
+
+  /* 6. Cenário: cards compactos */
+  .problema-grid { grid-template-columns: 1fr; gap: 8px; }
+  .problema-card { padding: 12px 16px; }
+
+  /* 7. Depois do diagnóstico */
+  .depois-cards { gap: 8px; }
+  .depois-card { padding: 14px 16px; }
+  .sentinela-bloco { padding: 16px; }
+  .depois-ctas { gap: 12px; }
+
+  /* 8. Bio com 3 linhas e "Ler mais" */
+  .quem-foto { max-height: 260px; }
+  .quem-bio {
+    display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3;
+    overflow: hidden; margin-bottom: 4px;
+  }
+  .quem-bio--aberta { display: block; -webkit-line-clamp: unset; overflow: visible; }
+  .quem-ler-mais {
+    display: inline-block; background: none; border: 0; padding: 4px 0; cursor: pointer;
+    font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600;
+    color: var(--bege-claro); text-decoration: underline; text-underline-offset: 3px;
+  }
+
+  /* 9. FAQ */
+  .faq-pergunta { padding: 14px 0; font-size: 15px; }
+
+  /* Formulário e CTA final */
+  .cta-grid { gap: 28px; }
+}
+@media (max-width: 600px) {
+  .setores-linha { margin: 0 0 16px; padding: 0 0 4px; }
+  .para-quem-item { padding: 6px 0; background: none; border: 0; gap: 8px; }
+  .metodo-etapa { padding: 12px 14px; }
+}

@@ -209,12 +209,9 @@ function Hero() {
               </div>
               <a href="#cta-final" className="btn-link">Prefiro preencher um formulário</a>
             </div>
-            {/* LR-01: linha de prova */}
+            {/* LR-01: linha de prova + municípios, em uma linha curta */}
             <p className="hero-prova">
-              CREA-PA 1521301735 · Cerca de 50 processos protocolados em órgãos ambientais · Retorno em até 1 dia útil
-            </p>
-            <p className="hero-micro">
-              Para empresas de Belém, Ananindeua, Marituba, Benevides, Santa Isabel do Pará e Castanhal.
+              CREA-PA 1521301735 · Cerca de 50 processos protocolados · Belém e Região Metropolitana
             </p>
           </div>
 
@@ -268,12 +265,12 @@ function AutoridadeFaixa() {
 
 function ParaQuem() {
   const itens = [
-    "Não sabe com certeza quando vencem a Licença de Operação ou a outorga da empresa.",
-    "A licença tem condicionantes e você não sabe se todas estão comprovadas.",
-    "A empresa precisa entregar RIAA, PGRS ou outros relatórios e ninguém acompanha os prazos.",
-    "Recebeu uma notificação ou exigência de órgão ambiental.",
-    "Vai ampliar a operação, pedir financiamento ou passar por auditoria de um cliente.",
-    "Nunca teve um levantamento completo das obrigações ambientais da empresa.",
+    "Não sabe o prazo da licença e outorga.",
+    "Tem condicionantes sem comprovação.",
+    "Prazos de RIAA e PGRS sem controle.",
+    "Recebeu notificação de órgão ambiental.",
+    "Vai ampliar, financiar ou ser auditada.",
+    "Nunca levantou todas as obrigações.",
   ];
 
   // LR-08: setores atendidos
@@ -318,18 +315,18 @@ function ParaQuem() {
 
 function OQueRecebe() {
   const recebe = [
-    "Situação atual das licenças, outorgas e autorizações da empresa.",
-    "Lista das condicionantes e do que já está comprovado.",
-    "Calendário com as obrigações e os prazos dos próximos 12 meses.",
-    "Pendências e riscos identificados, por ordem de prioridade.",
-    "Recomendação do que fazer e em que ordem.",
+    "Situação de licenças, outorgas e afins.",
+    "Condicionantes e o que já foi comprovado.",
+    "Calendário de prazos para 12 meses.",
+    "Pendências e riscos, por prioridade.",
+    "O que fazer e em que ordem.",
   ];
 
   const passos = [
-    { num: "01", texto: "Você chama no WhatsApp ou preenche o formulário." },
-    { num: "02", texto: "Enviamos a lista de documentos que precisamos analisar." },
-    { num: "03", texto: "A responsável técnica analisa a situação da empresa." },
-    { num: "04", texto: "Você recebe o documento e uma conversa para explicar cada ponto." },
+    { num: "01", texto: "Contato pelo WhatsApp ou formulário." },
+    { num: "02", texto: "Enviamos a lista de documentos." },
+    { num: "03", texto: "A responsável técnica analisa." },
+    { num: "04", texto: "Entrega do documento, com explicação." },
   ];
 
   return (
@@ -349,17 +346,17 @@ function OQueRecebe() {
             </ul>
           </div>
 
-          <div className="recebe-coluna">
+          <div className="recebe-coluna recebe-coluna--passos">
             <div className="tag-label">O processo</div>
             <h2 className="titulo-secao-sm">Como funciona</h2>
-            <div className="passos-lista">
+            <ol className="passos-lista">
               {passos.map((p) => (
-                <div key={p.num} className="passo-item">
+                <li key={p.num} className="passo-item">
                   <div className="passo-num">{p.num}</div>
                   <div className="passo-texto">{p.texto}</div>
-                </div>
+                </li>
               ))}
-            </div>
+            </ol>
             <div className="prazo-bloco">
               <span className="prazo-icone"><IconClock /></span>
               <span className="prazo-texto">
@@ -369,7 +366,7 @@ function OQueRecebe() {
           </div>
         </div>
 
-        <div style={{ textAlign: "center", marginTop: "48px" }}>
+        <div className="recebe-cta">
           <div>
             <a
               href={whatsappHref()}
@@ -394,19 +391,19 @@ function MetodoTrabalho() {
   const etapas = [
     {
       titulo: "Levantamento documental",
-      texto: "Licenças, outorgas, autorizações, condicionantes e relatórios entregues.",
+      texto: "Licenças, condicionantes e relatórios.",
     },
     {
       titulo: "Enquadramento legal",
-      texto: "Obrigações federais, estaduais e municipais aplicáveis à atividade.",
+      texto: "Normas federais, estaduais e municipais.",
     },
     {
       titulo: "Matriz de prazos e riscos",
-      texto: "O que vence, o que está pendente e o que pode gerar autuação.",
+      texto: "Prazos, pendências e risco de autuação.",
     },
     {
       titulo: "Plano de 12 meses",
-      texto: "Ações em ordem de prioridade, com responsável e prazo.",
+      texto: "Ações, prazos e responsáveis.",
     },
   ];
 
@@ -437,19 +434,19 @@ function Problema() {
   const itens = [
     {
       titulo: "Licença a vencer",
-      texto: "A renovação deve ser pedida com antecedência mínima de 120 dias (Lei Complementar 140/2011, art. 14, § 4°).",
+      texto: "Renovação pedida com 120 dias de antecedência (LC 140/2011, art. 14, § 4º).",
     },
     {
       titulo: "Condicionantes sem comprovação",
-      texto: "Cumprida e não registrada, para o órgão a obrigação não foi cumprida.",
+      texto: "Cumprida e não registrada, conta como não cumprida.",
     },
     {
       titulo: "Água sem outorga",
-      texto: "Captar água ou lançar efluentes exige outorga própria, independente da licença.",
+      texto: "Captar água ou lançar efluentes exige outorga própria.",
     },
     {
       titulo: "Relatórios desatualizados",
-      texto: "RIAA e PGRS precisam refletir a operação atual da empresa.",
+      texto: "RIAA e PGRS devem refletir a operação atual.",
     },
   ];
 
@@ -460,7 +457,7 @@ function Problema() {
           <div className="tag-label tag-label--bege">O cenário</div>
           <h2 className="titulo-secao">Ter licença não encerra as obrigações ambientais.</h2>
           <p className="subtitulo-secao">
-            Depois da licença vêm os prazos, as condicionantes, os relatórios e a outorga da água. Quando ninguém acompanha, o problema aparece na fiscalização ou na renovação.
+            Depois dela vêm prazos, condicionantes, relatórios e outorga. Sem acompanhamento, o problema aparece na fiscalização ou na renovação.
           </p>
         </div>
 
@@ -554,12 +551,27 @@ function DepoisDiagnostico() {
 
         <div className="sentinela-bloco">
           <div className="sentinela-bloco-tag">Programa Sentinela · pago · contrato anual</div>
-          <h3 className="sentinela-bloco-titulo">Como funciona o Programa Sentinela</h3>
-          <p className="sentinela-bloco-texto">
-            No Sentinela, a IL Ambiental acompanha de forma sistemática as obrigações ambientais da sua empresa durante o período contratado e organiza o que precisa ser feito ao longo do ano.
+          <p className="sentinela-resumo">
+            Gestão ambiental contínua por 12 meses, com escopo definido a partir do Diagnóstico Vértice.
           </p>
-          {/* LC-10: lista colapsável no mobile */}
-          <div className={`sentinela-lista-wrapper${sentinelaExpandido ? " sentinela-lista-wrapper--expandido" : ""}`}>
+          <button
+            className="sentinela-ver-mais"
+            onClick={() => setSentinelaExpandido(!sentinelaExpandido)}
+            aria-expanded={sentinelaExpandido}
+            aria-controls="sentinela-detalhes"
+          >
+            {sentinelaExpandido ? "Recolher" : "Ver o que o Sentinela inclui"}
+            <IconChevron open={sentinelaExpandido} />
+          </button>
+          <div
+            id="sentinela-detalhes"
+            className={`sentinela-lista-wrapper${sentinelaExpandido ? " sentinela-lista-wrapper--expandido" : ""}`}
+          >
+            <h3 className="sentinela-bloco-titulo">Como funciona o Programa Sentinela</h3>
+            <p className="sentinela-bloco-texto">
+              No Sentinela, a IL Ambiental acompanha de forma sistemática as obrigações ambientais da sua empresa durante o período contratado e organiza o que precisa ser feito ao longo do ano.
+            </p>
+            <div className="sentinela-subtitulo">O que pode incluir</div>
             <ul className="sentinela-lista">
               {sentinelaItens.map((item, i) => (
                 <li key={i} className="sentinela-item">
@@ -570,13 +582,6 @@ function DepoisDiagnostico() {
             </ul>
             <p className="sentinela-escopo">O escopo de cada contrato é definido a partir do Diagnóstico Vértice.</p>
           </div>
-          <button
-            className="sentinela-ver-mais"
-            onClick={() => setSentinelaExpandido(!sentinelaExpandido)}
-          >
-            {sentinelaExpandido ? "Recolher" : "Ver o que está incluído"}
-            <IconChevron open={sentinelaExpandido} />
-          </button>
         </div>
 
         {/* LC-04: tabela desktop */}
@@ -657,6 +662,7 @@ function DepoisDiagnostico() {
 // ─── Quem conduz (LC-06: voz institucional) ──────────────────────────────────
 
 function QuemConduz() {
+  const [bioAberta, setBioAberta] = useState(false);
   const selos = [
     "Engenharia Florestal",
     "Direito Agroambiental (CESUPA)",
@@ -684,9 +690,17 @@ function QuemConduz() {
             <div className="quem-subtitulo">
               Engenheira Florestal (UEPA) · Pós-graduação em Direito Agroambiental (CESUPA) · CREA-PA 1521301735
             </div>
-            <p className="quem-bio">
+            <p className={`quem-bio${bioAberta ? " quem-bio--aberta" : ""}`} id="quem-bio">
               Todos os diagnósticos e projetos da IL Ambiental são conduzidos sob a coordenação técnica direta de Isabela Loiane. Sua trajetória começou nos estágios na SEMMA e na Emater, do lado de quem fiscaliza, e seguiu por quase quatro anos como responsável técnica no setor privado. Essa vivência, somada à formação técnica e jurídica, faz com que cada entrega considere ao mesmo tempo a exigência técnica do processo e o risco jurídico para a empresa.
             </p>
+            <button
+              className="quem-ler-mais"
+              onClick={() => setBioAberta(!bioAberta)}
+              aria-expanded={bioAberta}
+              aria-controls="quem-bio"
+            >
+              {bioAberta ? "Ler menos" : "Ler mais"}
+            </button>
             <div className="quem-selos">
               {selos.map((s) => (
                 <span key={s} className="quem-selo">{s}</span>
@@ -765,14 +779,8 @@ const faqItens = [
   },
 ];
 
-// LC-10: mostrar 5 por padrão, com "ver mais"
-const FAQ_INICIAIS = 5;
-
 function FAQ() {
   const [aberto, setAberto] = useState<number | null>(null);
-  const [verMais, setVerMais] = useState(false);
-
-  const itensVisiveis = verMais ? faqItens : faqItens.slice(0, FAQ_INICIAIS);
 
   return (
     <section id="faq">
@@ -782,7 +790,7 @@ function FAQ() {
           <h2 className="titulo-secao">Perguntas frequentes</h2>
         </div>
         <div className="faq-lista" itemScope itemType="https://schema.org/FAQPage">
-          {itensVisiveis.map((item, i) => (
+          {faqItens.map((item, i) => (
             <div
               key={i}
               className={`faq-item${aberto === i ? " faq-item--aberto" : ""}`}
@@ -809,13 +817,6 @@ function FAQ() {
             </div>
           ))}
         </div>
-        {!verMais && faqItens.length > FAQ_INICIAIS && (
-          <div style={{ textAlign: "center", marginTop: "16px" }}>
-            <button className="btn-link-simples" onClick={() => setVerMais(true)}>
-              Ver mais perguntas
-            </button>
-          </div>
-        )}
       </div>
     </section>
   );

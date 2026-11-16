@@ -18,11 +18,11 @@ export const CONTATO = {
   // Mensagem que já vem pré-escrita quando a pessoa clica em qualquer
   // botão de WhatsApp da página.
   whatsappMensagemPadrao:
-    "Olá, Isabela! Vim pela página do Diagnóstico Vértice e gostaria de solicitar o diagnóstico para a minha empresa. [LP]",
+    "Olá, Isabela! Vim pela página do Diagnóstico Vértice e gostaria de solicitar o diagnóstico ambiental da minha empresa.",
 
   // Mensagem específica para quem quer conversar sobre o Sentinela.
   whatsappMensagemSentinela:
-    "Olá, Isabela! Vim pela página do Diagnóstico Vértice e gostaria de conhecer o Programa Sentinela. [LP]",
+    "Olá, Isabela! Vim pela página do Diagnóstico Vértice e gostaria de conhecer o Programa Sentinela.",
 
   email: "contato@ilambiental.com.br",
 
